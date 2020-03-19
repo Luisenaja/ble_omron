@@ -66,6 +66,7 @@ bool connectToServer() {
       return false;
     }
     Serial.println(" - Found our service");
+    Serial.println(uxTaskGetStackHighWaterMark(NULL));
 
 
     
@@ -77,6 +78,7 @@ bool connectToServer() {
       return false;
     }
     Serial.println(" - Found our characteristic");
+    Serial.println(uxTaskGetStackHighWaterMark(NULL));
 
     // Read the value of the characteristic.
     if(pRemoteCharacteristic->canRead()) {
